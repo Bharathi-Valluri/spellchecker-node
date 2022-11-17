@@ -10,10 +10,9 @@ app.use(cors())
 
 async function run () {
   try {
-    console.log('connected to the database')
     app.use('/', router)
     app.listen(process.env.PORT, () => {
-      console.log(`serveris running on port no:${process.env.PORT}`)
+      console.log(`server is running on port no:${process.env.PORT}`)
     })
   } catch (error) {
     console.log('server is not running at port 3993' + error)

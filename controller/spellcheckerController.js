@@ -9,7 +9,7 @@ const spellChecker = (req, res) => {
     let misspelt_word = []
     let suggestions = []
     splitingWords.forEach(element => {
-      console.log(element)
+      //   console.log(element)
 
       var is_spelled_correctly = dictionary.check(element)
       if (is_spelled_correctly === false) {
