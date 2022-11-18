@@ -5,11 +5,13 @@ const appConst = require('../routers/constants')
 const spellChecker = (req, res) => {
   try {
     const { paragraph } = req.body
-    const splitingWords = paragraph.split(' ')
+    const splitingWords = paragraph.replace(/[&\/\\#,+!@()$~%.'":*?<>{}]/g, '')
+
+    const split_word = splitingWords.split(' ')
     let misspelt_word = []
     let suggestions = []
-    splitingWords.forEach(element => {
-      //   console.log(element)
+    split_word.forEach(element => {
+      console.log(element)
 
       var is_spelled_correctly = dictionary.check(element)
       if (is_spelled_correctly === false) {
